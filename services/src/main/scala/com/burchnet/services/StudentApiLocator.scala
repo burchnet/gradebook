@@ -1,6 +1,8 @@
 package com.burchnet.services
 
-trait StudentApi{
+trait StudentApiLocator {
 	type Student = com.burchnet.domain.student.Student
+	val Student = com.burchnet.domain.student.Student
+	
 	val StudentManager = com.burchnet.services.StudentManager
 }

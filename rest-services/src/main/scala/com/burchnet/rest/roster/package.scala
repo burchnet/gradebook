@@ -1,5 +1,5 @@
 package com.burchnet.rest
 
-import com.burchnet.services.RosterApi
+import com.burchnet.services.RosterApiLocator
 
-package object roster extends RosterApi{}
+package object roster extends RosterApiLocator {}

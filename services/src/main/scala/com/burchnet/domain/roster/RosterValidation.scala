@@ -2,9 +2,9 @@ package com.burchnet.domain.roster
 
 import com.burchnet.utility._
 
-object RosterValidation extends Validation[Roster]{
+object RosterValidation extends Validation[Roster] {
 	def apply(roster: Roster): Either[Error, Unit] = 
-		for{
+		for {
 			_ <- nameValidation(roster.id, roster.name).right
 		} yield ()
 

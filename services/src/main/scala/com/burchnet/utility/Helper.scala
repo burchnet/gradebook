@@ -1,3 +1,3 @@
 package com.burchnet.utility
 
-trait Helper[M <: Model]{}
+trait Helper[M <: Model] {}

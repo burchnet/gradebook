@@ -1,6 +1,5 @@
 package com.burchnet.domain.roster
 
-import com.burchnet.domain.roster
 import com.burchnet.domain.student.Student
 import com.burchnet.utility._
 
@@ -11,14 +10,14 @@ trait RosterService { this: RosterHelper =>
 	def get(id: Long): Option[Roster] = RosterDAO.findOne(id)
 
 	def newRoster(roster: Roster): Either[Error, Roster] =
-		for{
+		for {
 			_ <- validation(roster).right
 
 			result <- RosterDAO.create(roster).right
 		} yield result
 
 	def addStudentToRoster(rosterId: Long, student: Student): Either[Error, Roster] =
-		for{
+		for {
 			roster <- findRoster(rosterId).right
 
 			newRoster <- Right(addStudent(roster, student)).right
@@ -27,7 +26,7 @@ trait RosterService { this: RosterHelper =>
 		} yield (newRoster)
 
 	def renameRoster(rosterNameRequest: model.RenamedRoster): Either[Error, Roster] = 
-		for{
+		for {
 			_ <- RosterValidation.nameValidation(rosterNameRequest.id, rosterNameRequest.name).right
 
 			roster <- findRoster(rosterNameRequest.id).right

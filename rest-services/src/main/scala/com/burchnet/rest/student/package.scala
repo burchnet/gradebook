@@ -1,5 +1,5 @@
 package com.burchnet.rest
 
-import com.burchnet.services.StudentApi
+import com.burchnet.services.StudentApiLocator
 
-package object student extends StudentApi{}
+package object student extends StudentApiLocator {}
