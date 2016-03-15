@@ -1,30 +1,48 @@
 package com.burchnet.persistence
 
 trait UtilityLocator {
-	type Equals = com.burchnet.persistence.utility.Equals
-	val Equals = com.burchnet.persistence.utility.Equals
 
-	type NotEquals = com.burchnet.persistence.utility.NotEquals
-	val NotEquals = com.burchnet.persistence.utility.NotEquals
+	type Equals = utility.Equals
+	val Equals = utility.Equals
 
-	type Error = com.burchnet.persistence.utility.Error
-	val Error = com.burchnet.persistence.utility.Error
+	type NotEquals = utility.NotEquals
+	val NotEquals = utility.NotEquals
 
-	type Model = com.burchnet.persistence.model.Model
+	type Error = utility.Error
+	val Error = utility.Error
 
-	type DBQuery = com.burchnet.persistence.utility.DBQuery
-	val DBQuery = com.burchnet.persistence.utility.DBQuery	
+	type Model = model.Model
 
-	type Param = com.burchnet.persistence.utility.Param
+	type DBQuery = utility.DBQuery
+	val DBQuery = utility.DBQuery	
 
-	type SortOrder = com.burchnet.persistence.utility.SortOrder
+	type Param = utility.Param
+	
+	type IsNull = utility.IsNull
+	val IsNull = utility.IsNull
 
-	type NoOrder = com.burchnet.persistence.utility.NoOrder
-	val NoOrder = com.burchnet.persistence.utility.NoOrder
+	type NotNull = utility.NotNull
+	val NotNull = utility.NotNull
 
-	type Ascending = com.burchnet.persistence.utility.Ascending
-	val Ascending = com.burchnet.persistence.utility.Ascending
+	type Range = utility.Range
+	val Range = utility.Range
 
-	type Descending = com.burchnet.persistence.utility.Descending
-	val Descending = com.burchnet.persistence.utility.Descending
+	type Keyword = utility.Keyword
+
+	type NoKeywords = utility.NoKeywords
+	val NoKeywords = utility.NoKeywords
+
+	type WithKeyword = utility.WithKeyword
+	val WithKeyword = utility.WithKeyword
+
+	type SortOrder = utility.SortOrder
+
+	type NoOrder = utility.NoOrder
+	val NoOrder = utility.NoOrder
+
+	type Ascending = utility.Ascending
+	val Ascending = utility.Ascending
+
+	type Descending = utility.Descending
+	val Descending = utility.Descending
 }

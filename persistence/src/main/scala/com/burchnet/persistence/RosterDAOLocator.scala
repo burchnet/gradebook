@@ -1,8 +1,8 @@
 package com.burchnet.persistence
 
 trait RosterDAOLocator {
-	type Roster = com.burchnet.persistence.model.Roster
-	val Roster = com.burchnet.persistence.model.Roster
+	type Roster = model.Roster
+	val Roster = model.Roster
 	
-	val RosterDAO = com.burchnet.persistence.dao.RosterDAO
+	val RosterDAO = dao.RosterDAO
 }
