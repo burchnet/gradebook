@@ -1,4 +1,4 @@
-package com.burchnet.persistence.dao
+package com.burchnet.persistence
 
 trait RosterDAOLocator {
 	type Roster = com.burchnet.persistence.model.Roster

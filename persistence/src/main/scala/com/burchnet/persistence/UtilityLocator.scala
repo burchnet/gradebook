@@ -1,4 +1,4 @@
-package com.burchnet.persistence.dao
+package com.burchnet.persistence
 
 trait UtilityLocator {
 	type Equals = com.burchnet.persistence.utility.Equals

@@ -1,7 +1,7 @@
-package com.burchnet.domain.roster
+package com.burchnet.services.domain.roster
 
-import com.burchnet.domain.student.Student
-import com.burchnet.utility._
+import com.burchnet.services.domain.student.Student
+import com.burchnet.services.utility._
 
 trait RosterService { this: RosterHelper =>
 
@@ -18,7 +18,7 @@ trait RosterService { this: RosterHelper =>
 
 	def addStudentToRoster(rosterId: Long, student: Student): Either[Error, Roster] =
 		for {
-			roster <- findRoster(rosterId).right
+			roster <- retrieveOrError(rosterId).right
 
 			newRoster <- Right(addStudent(roster, student)).right
 
@@ -29,7 +29,7 @@ trait RosterService { this: RosterHelper =>
 		for {
 			_ <- RosterValidation.nameValidation(rosterNameRequest.id, rosterNameRequest.name).right
 
-			roster <- findRoster(rosterNameRequest.id).right
+			roster <- retrieveOrError(rosterNameRequest.id).right
 
 			newRoster <- Right(roster.copy(name = rosterNameRequest.name)).right
 
@@ -37,8 +37,7 @@ trait RosterService { this: RosterHelper =>
 
 		} yield newRoster
 
-	protected val findRoster: Long => Either[Error, Roster] = 
-		RosterDAO.findOne(_).toRight(Error("Couldn't find Roster"))
+	private val retrieveOrError = findRoster(RosterDAO.findOne) _
 
 	protected val validation: Validation[Roster]
 }

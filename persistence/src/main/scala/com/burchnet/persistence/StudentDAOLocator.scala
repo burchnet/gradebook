@@ -1,4 +1,4 @@
-package com.burchnet.persistence.dao
+package com.burchnet.persistence
 
 trait StudentDAOLocator {
 	type Student = com.burchnet.persistence.model.Student

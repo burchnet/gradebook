@@ -1,6 +1,6 @@
-package com.burchnet.domain.student
+package com.burchnet.services.domain.student
 
-import com.burchnet.utility._
+import com.burchnet.services.utility._
 
 trait StudentService { this: StudentHelper => 
 

@@ -1,7 +1,7 @@
 package com.burchnet
 
-import com.burchnet.domain.roster._
-import com.burchnet.domain.student._
+import com.burchnet.services.domain.roster._
+import com.burchnet.services.domain.student._
 
 package object services {
     object StudentManager extends StudentService with StudentHelper {

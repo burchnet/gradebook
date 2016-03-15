@@ -1,6 +1,6 @@
-package com.burchnet.domain.roster
+package com.burchnet.services.domain.roster
 
-import com.burchnet.utility._
+import com.burchnet.services.utility._
 
 object RosterValidation extends Validation[Roster] {
 	def apply(roster: Roster): Either[Error, Unit] = 
