@@ -1,3 +1,7 @@
 package com.burchnet.rest.gradetype
 
-class GradeTypeController extends ServiceController[GradeType](GradeTypeManager) {}
+import com.burchnet.rest.utility.ServiceController
+
+class GradeTypeController extends ServiceController(GradeTypeManager) {
+    override lazy protected val model: GradeType = parsedBody.extract[GradeType]
+}

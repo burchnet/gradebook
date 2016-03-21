@@ -11,7 +11,7 @@ object RestservicesBuild extends Build {
   val Name = "rest-services"
   val Version = "1.0"
   val ScalaVersion = "2.11.7"
-  val ScalatraVersion = "2.4.0"
+  val ScalatraVersion = "2.3.0"
 
   lazy val project = Project (
     "rest-services",
@@ -25,8 +25,8 @@ object RestservicesBuild extends Build {
       resolvers += Classpaths.typesafeReleases,
       resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases",
       libraryDependencies ++= Seq(
-        "org.scalatra" %% "scalatra-json" % "2.4.0",
-        "org.json4s"   %% "json4s-native" % "3.3.0",
+        "org.scalatra" %% "scalatra-json" % "2.3.0",
+        "org.json4s"   %% "json4s-jackson" % "3.2.9",
         "org.scalatra" %% "scalatra" % ScalatraVersion,
         "org.scalatra" %% "scalatra-scalate" % ScalatraVersion,
         "org.scalatra" %% "scalatra-specs2" % ScalatraVersion % "test",
