@@ -5,7 +5,7 @@ import com.burchnet.services.utility._
 object RosterValidation extends Validation[Roster] {
 	def apply(roster: Roster): Either[Error, Unit] = 
 		for {
-			_ <- nameValidation(roster.id, roster.name).right
+			  _ <- nameValidation(roster.id, roster.name).right
 		} yield ()
 
 	val nameValidation: (Long, String) => Either[Error, Unit] = (id, name) => {

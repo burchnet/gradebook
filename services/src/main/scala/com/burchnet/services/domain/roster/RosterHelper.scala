@@ -8,5 +8,5 @@ trait RosterHelper extends Helper[Roster] {
 		roster.copy(students = (student :: roster.students))
 
 	protected def findRoster(retrieve: (Long) => Option[Roster])(id: Long): Either[Error, Roster] =
-		retrieve(id).toRight(Error("Couldn't find Roster"))	
+		findOrError(retrieve)("Could not find Roster")(id)
 }

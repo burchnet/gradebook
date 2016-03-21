@@ -1,6 +1,6 @@
 package com.burchnet.persistence
 
-trait StudentDAOLocator {
+trait StudentDAOLocator extends DAOLocator {
 	type Student = model.Student
 	val Student = model.Student
 	

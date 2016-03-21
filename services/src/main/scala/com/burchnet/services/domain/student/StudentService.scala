@@ -8,16 +8,16 @@ trait StudentService { this: StudentHelper =>
 	
 	def addStudent(student: Student): Either[Error, Student] =
 		for {
-			_ <- validation(student).right
+		      _ <- validation(student).right
 
-			createdStudent <- StudentDAO.create(student).right
+			  createdStudent <- StudentDAO.create(student).right
 		} yield createdStudent
 
 	def updateStudent(student: Student): Either[Error, Unit] = 
 		for {
-			_ <- validation(student).right
+			  _ <- validation(student).right
 
-			_ <- StudentDAO.update(student).right
+			  _ <- StudentDAO.update(student).right
 		} yield ()
 
 	protected val validation: Validation[Student]

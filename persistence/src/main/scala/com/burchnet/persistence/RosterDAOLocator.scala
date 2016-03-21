@@ -1,6 +1,6 @@
 package com.burchnet.persistence
 
-trait RosterDAOLocator {
+trait RosterDAOLocator extends DAOLocator {
 	type Roster = model.Roster
 	val Roster = model.Roster
 	
